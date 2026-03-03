@@ -158,8 +158,7 @@ export default function Home() {
       const { scrollLeft, clientWidth, scrollWidth } = el;
 
       if (scrollLeft + clientWidth >= scrollWidth - 100) {
-        // @ts-expect-error - behavior "instant" no es estándar en types, pero funciona en browsers modernos
-        el.scrollTo({ left: scrollWidth / 3, behavior: "instant" });
+        el.scrollTo({ left: scrollWidth / 3, behavior: "instant" as ScrollBehavior });
       } else {
         el.scrollBy({ left: 352, behavior: "smooth" });
       }
